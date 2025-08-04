@@ -1095,6 +1095,9 @@ img{
   cursor: pointer;
    color: rgb(34, 34, 144);
 }
+.lunderLineErase{
+  /* text-decoration: none; */
+}
 
 
 
@@ -1273,6 +1276,33 @@ img{
   border: 2px solid skyblue;
   /* box-sizing: border-box; */
 }
+/* roll over zoom in */
+.mainProductImg {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 500px; /* adjust based on your layout */
+  /* margin: auto; */
+  margin-top: 60px;
+}
+
+#mainProductImage {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+#mainProductImage:hover {
+  transform: scale(1.1); /* Zooms in 10% */
+}
+
+.zoomText {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  margin-top: 8px;
+}
+
 
 
 .productDetailsOneSection h2 {
