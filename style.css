@@ -886,7 +886,7 @@ img{
     flex-wrap: wrap;       /* Allows buttons to move to next line */
     gap: 10px;              /* Space between buttons */
     max-width: 100%;        /* Keep inside container */
-    border: 2px solid red;
+    /* border: 2px solid red; */
 }
 
 .buttonGroup.sizegap button {
