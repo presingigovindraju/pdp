@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <!-- <title>Navbar with Drop</title> -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+    <link rel="shortcut icon"
+        href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKf4-d9BAMB0y66NYvNIJXy3ctlQnsI2rDlA&s"
+        type="image/x-icon">
+    <link rel="shortcut icon"
+        href="data:image/png;base64,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"
+        type="image/x-icon">
+    <title>Login | Drive Medical US Site</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navBar">
+        <div id="navContentDiv">
+            <div id="firstOne">
+                <div id="firstOneFirstDiv" onclick="toggleDrop()">
+                    <img class="gapBtw" id="americanLogo"
+                        src="https://shop.drivemedical.com/_ui/responsive/common/images/flag.png" alt="flag" />
+                    <h4 id="usen" class="gapBtw">US EN</h4>
+                    <i class="hamani gapBtw fa-solid fa-angle-down"></i>
+                </div>
+
+                <div id="firstOneSecoundDiv">
+                    <a href="https://www.google.com/maps/@30.4380174,-84.3038144,17z?entry=ttu" target="_blank">
+                        <p class="gapBtw">Locate Providers</p>
+                    </a>
+                </div>
+
+                <div id="firstOneThirdDiv">
+                    <a href="https://chatgpt.com/" target="_blank">
+                        <i class="gapBtw fa-solid fa-comment-dots"></i>
+                        <h3 class="chatMe gapBtw">chat</h3>
+                    </a>
+                </div>
+
+                <p id="inspiredOne" class="gapBtw">Inspired By Drive</p>
+            </div>
+
+            <div id="secoundOne">
+                <i id="menuDrop" class="fa-solid fa-bars"></i>
+                <div id="secoundOneFirstDiv">
+                    <i class="fa-solid fa-box-archive"></i>
+                    <p class="justOrder">Order Status</p>
+                </div>
+                <div id="secoundOneSecoundDiv">
+                    <i class="fa-solid fa-user"></i>
+                    <p class="justOrder">Sign In</p>
+                </div>
+                <div id="secoundOneThirdDiv">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <p class="justOrder">cart</p>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="dropMenu" class="dropMe">
+        <p class="matter">US EN</p>
+        <p class="matter">Canada - English</p>
+        <p class="matter">Canada - French</p>
+        <p class="matter">UK - English</p>
+        <p class="matter">Germany - Deutsch</p>
+        <p class="matter">France - French</p>
+        <p class="matter">Drive DeVilbiss International</p>
+        <p class="matter">Specialised Orthotic Services - UK</p>
+    </div>
+
+
+
+
+    <div class="mainSignup">
+        <div id="firstSection">
+            <!-- Logo -->
+            <img id="firstSectionImgSIzing" src="./img//logo (2).png" alt="img_logo" />
+
+            <!-- Navigation Links -->
+            <div id="firstSectionAnchorTags">
+                <a class="anchorTagAttribute" href="#products">PRODUCTS</a>
+                <a class="anchorTagAttribute" href="#support">SUPPORT & SERVICES</a>
+                <a class="anchorTagAttribute" href="#serve">WHO WE SERVE</a>
+                <a class="anchorTagAttribute" href="#about">WHO WE ARE</a>
+            </div>
+
+            <!-- Search Bar -->
+            <div id="firstSectionSearchTag">
+                <input type="text" name="text" placeholder="Search..." />
+                <div id="firstSectionInSearMixTag">
+                    <div id="firstSectionInProTag">
+                        <p>in:</p>
+                        <p class="ProductsColorChange">Products</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="secoundSection">
+        <div class="breadcrumbPath">
+            <p class="breadcrumbText">
+                Home / Products / Mobility / Wheelchairs / Standard Wheelchairs /
+                <span>Silver Sport 1 Wheelchair</span>
+            </p>
+            <div class="menuIcon">
+                <i class="fa fa-bars"></i>
+            </div>
+
+            <!-- <div class="">
+      <p>Home</p>
+      <p>Products</p>
+      <p>Mobility</p>
+      <p>Wheelchairs</p>
+      <p>Standard Wheelchairs</p>
+      <p><strong>Silver Sport 1 Wheelchair</strong></p>
+    </div> -->
+        </div>
+
+        <div class="productLayoutTotalBlock">
+            <div class="productLayout">
+                <div class="leftImages">
+                    <div class="sideThumbnails">
+  <i id="arrowUp" class="arrowSizing fa-solid fa-angle-up"></i>
+
+  <div class="thumbnailsView">
+    <img src="./img/chairFour.jpg" data-src="./img/chairFour.jpg" class="thumbnailImage" />
+    <img src="./img/chairOne.png" data-src="./img/chairOne.png" class="thumbnailImage" />
+    <img src="./img/chairTwo.png" data-src="./img/chairTwo.png" class="thumbnailImage" />
+    <img src="./img/chairThree.jpeg" data-src="./img/chairThree.jpeg" class="thumbnailImage activeThumbnail" />
+    
+  </div>
+
+  <i id="arrowDown" class="arrowSizing fa-solid fa-angle-down"></i>
+</div>
+
+                </div>
+
+                <div class="mainProductImg">
+                    <img id="mainProductImage" src="./img/chairThree.jpeg" alt="main product" />
+                    <p class="zoomText">Roll over image to zoom in</p>
+                </div>
+            </div>
+
+            <div class="productDetailsPurchaseBoxTotally">
+                <div class="productDetails">
+                    <div class="productDetailsOneSection">
+                        <h2>Silver Sport 2 Wheelchair with Full Arms and Swing-Away Removable Footrests</h2>
+                        <div class="productCode">
+                            <div>
+                                <p>Item # SSP218DDA-ELR</p>
+                                <p class="productCodeLove">
+                                    <i class="lovedOne fa-regular fa-heart"></i> Save to Favorites
+                                </p>
+                            </div>
+                            <div>
+                                <p>UPC # 822383140414</p>
+                                <p>HCPCS # E4002</p>
+                            </div>
+                        </div>
+                        <p class="productPrice">$262.23</p>
+                    </div>
+
+                    <div class="productDetailsTwoSection">
+                        <div class="optionGroup">
+                            <label>Color</label>
+                            <div class="colorDots">
+                                <span class="dot red selected active"></span>
+                                <span class="dot blue"></span>
+                                <span class="dot black"></span>
+                            </div>
+                        </div>
+
+                        <div class="optionGroup">
+                            <label>Seat Size</label>
+                            <div class="buttonGroup sizegap">
+                                <button class="active">18"</button>
+                                <button>16"</button>
+                                <button>20"</button>
+                            </div>
+                        </div>
+
+                        <div class="optionGroup">
+                            <label>Arm Style</label>
+                            <div class="buttonGroup styleGap">
+                                <button class="active">Desk</button>
+                                <button>Full</button>
+                            </div>
+                        </div>
+
+                        <div class="optionGroup">
+                            <label>Front Rigging</label>
+                            <div class="buttonGroup riggingGap">
+                                <button>Footrests</button>
+                                <button class="active">Legrests</button>
+                            </div>
+                        </div>
+
+                        <div class="seeAllAchorTag">
+                            <a href="https://www.drivemedical.com/customer-service" target="_blank">See All Product
+                                Options</a>
+                            <i class="fa-solid fa-angle-right"></i>
+                        </div>
+                    </div>
+
+                   <div class="productDetailsThreeSection">
+  <h3>About This Item</h3>
+  <p id="aboutText">
+    If you are seeking an easy, transportable mobility option,
+    then look no further than Drive Medical’s Silver Sport Transport Wheelchair.
+    The durable steel frame with an attractive silver vein finish and durable vinyl upholstery
+    <span id="dots">...</span>
+    <span id="moreText" style="display: none;">
+      It also features padded armrests and swing-away footrests for enhanced comfort.
+      With its lightweight design and easy-folding feature, it’s perfect for travel and storage.
+    </span>
+  </p>
+
+  <button id="seeMoreButton" style="margin-top: 8px;">
+    <span class="seeMoreText">See More</span>
+    <i class="arrowTextDocaretionRemove fa-solid fa-angle-right"></i>
+  </button>
+</div>
+
+
+                </div>
+            </div>
+
+            <div class="purchaseBoxTotallyFull">
+                <div id="purchaseBoxTotally">
+                    <div class="purchaseBox">
+                        <p class="purchasePrice">$262.23</p>
+                        <div class="quantitySelects">
+                            <div class="optionSelect optionSelectFirstones">
+                                <label>Quantity</label>
+                                <select>
+                                    <option>1</option>
+                                    <option>2</option>
+                                </select>
+                            </div>
+                            <div class="optionSelect">
+                                <label>UOM</label>
+                                <select>
+                                    <option>4/cs</option>
+                                    <option>2/cs</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <p class="deliveryText">
+                            <span class="deliveryTextDeliveryTo">
+                                Deliver to <strong>Chris - Huntington</strong>
+                            </span>
+                            <span class="numberSpacing">11743</span>
+                            <br />
+                            Last Order Date: <strong>11/10/24</strong>
+                            <br />
+                            <span class="inStockText">In Stock</span>
+                        </p>
+
+                        <button class="addToCartBtn">Add to Cart</button>
+                        <button class="buyNowBtn">Buy Now</button>
+                    </div>
+
+                    <div class="replacementPartBox">
+                        <p class="replacementTitle">
+                            <i class="fa-solid fa-gear"></i> Looking for Replacement Parts?
+                        </p>
+                        <p class="partsFinder">
+                            To find replacement parts or accessories for this product,
+                            visit the <a href="#">Parts Finder</a> page.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <!-- <div class="thirdSection">
+  <div class="tabHeader">
+    <button class="active">Product Options</button>
+    <button>Features</button>
+    <button>Specifications</button>
+    <button>Resources/Downloads</button>
+  </div>
+
+  
+  <div class="productOptionsTab" style="display: block;">
+    <div class="tableWrapper">
+      <table class="productOptionsTable">
+        <thead>
+          <tr>
+            <th>Item #</th>
+            <th>UPC</th>
+            <th>Seat Size</th>
+            <th>Front Rigging</th>
+            <th>HCPCS</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Unit</th>
+            <th>Select</th>
+          </tr>
+        </thead>
+         <tbody>
+                    <tr>
+                        <td data-label="Item #">PLA416FBUARAD-ELR</td>
+                        <td data-label="UPC">822383005263</td>
+                        <td data-label="Seat Size">16"</td>
+                        <td data-label="Front Rigging">Elevating Leg Rest</td>
+                        <td data-label="HCPCS">$299.99</td>
+                        <td data-label="Price">$299.99</td>
+                        <td data-label="Quantity"><input type="number" value="1" min="1" /></td>
+                        <td data-label="Unit"><select>
+                                <option>1/EACH</option>
+                            </select></td>
+                        <td data-label="Select"><button class="addToCartBtns">Add to Cart</button></td>
+                    </tr>
+                    <tr>
+                        <td data-label="Item #">PLA416FBUARAD-ELR</td>
+                        <td data-label="UPC">822383005263</td>
+                        <td data-label="Seat Size">16"</td>
+                        <td data-label="Front Rigging">Elevating Leg Rest</td>
+                        <td data-label="HCPCS">$299.99</td>
+                        <td data-label="Price">$299.99</td>
+                        <td data-label="Quantity"><input type="number" value="1" min="1" /></td>
+                        <td data-label="Unit"><select>
+                                <option>1/EACH</option>
+                            </select></td>
+                        <td data-label="Select"><button class="addToCartBtns">Add to Cart</button></td>
+                    </tr>
+                    <tr>
+                        <td data-label="Item #">PLA416FBUARAD-ELR</td>
+                        <td data-label="UPC">822383005263</td>
+                        <td data-label="Seat Size">16"</td>
+                        <td data-label="Front Rigging">Elevating Leg Rest</td>
+                        <td data-label="HCPCS">$299.99</td>
+                        <td data-label="Price">$299.99</td>
+                        <td data-label="Quantity"><input type="number" value="1" min="1" /></td>
+                        <td data-label="Unit"><select>
+                                <option>1/EACH</option>
+                            </select></td>
+                        <td data-label="Select"><button class="addToCartBtns">Add to Cart</button></td>
+                    </tr>
+                    <tr>
+                        <td data-label="Item #">PLA416FBUARAD-ELR</td>
+                        <td data-label="UPC">822383005263</td>
+                        <td data-label="Seat Size">16"</td>
+                        <td data-label="Front Rigging">Elevating Leg Rest</td>
+                        <td data-label="HCPCS">$299.99</td>
+                        <td data-label="Price">$299.99</td>
+                        <td data-label="Quantity"><input type="number" value="1" min="1" /></td>
+                        <td data-label="Unit"><select>
+                                <option>1/EACH</option>
+                            </select></td>
+                        <td data-label="Select"><button class="addToCartBtns">Add to Cart</button></td>
+                    </tr>
+                    <tr>
+                        <td data-label="Item #">PLA416FBUARAD-ELR</td>
+                        <td data-label="UPC">822383005263</td>
+                        <td data-label="Seat Size">16"</td>
+                        <td data-label="Front Rigging">Elevating Leg Rest</td>
+                        <td data-label="HCPCS">$299.99</td>
+                        <td data-label="Price">$299.99</td>
+                        <td data-label="Quantity"><input type="number" value="1" min="1" /></td>
+                        <td data-label="Unit"><select>
+                                <option>1/EACH</option>
+                            </select></td>
+                        <td data-label="Select"><button class="addToCartBtns">Add to Cart</button></td>
+                    </tr>
+                    <tr>
+                        <td data-label="Item #">PLA416FBUARAD-ELR</td>
+                        <td data-label="UPC">822383005263</td>
+                        <td data-label="Seat Size">16"</td>
+                        <td data-label="Front Rigging">Elevating Leg Rest</td>
+                        <td data-label="HCPCS">$299.99</td>
+                        <td data-label="Price">$299.99</td>
+                        <td data-label="Quantity"><input type="number" value="1" min="1" /></td>
+                        <td data-label="Unit"><select>
+                                <option>1/EACH</option>
+                            </select></td>
+                        <td data-label="Select"><button class="addToCartBtns">Add to Cart</button></td>
+                    </tr>
+                    <tr>
+                        <td data-label="Item #">PLA416FBUARAD-ELR</td>
+                        <td data-label="UPC">822383005263</td>
+                        <td data-label="Seat Size">16"</td>
+                        <td data-label="Front Rigging">Elevating Leg Rest</td>
+                        <td data-label="HCPCS">$299.99</td>
+                        <td data-label="Price">$299.99</td>
+                        <td data-label="Quantity"><input type="number" value="1" min="1" /></td>
+                        <td data-label="Unit"><select>
+                                <option>1/EACH</option>
+                            </select></td>
+                        <td data-label="Select"><button class="addToCartBtns">Add to Cart</button></td>
+                    </tr>
+                    <tr>
+                        <td data-label="Item #">PLA416FBUARAD-ELR</td>
+                        <td data-label="UPC">822383005263</td>
+                        <td data-label="Seat Size">16"</td>
+                        <td data-label="Front Rigging">Elevating Leg Rest</td>
+                        <td data-label="HCPCS">$299.99</td>
+                        <td data-label="Price">$299.99</td>
+                        <td data-label="Quantity"><input type="number" value="1" min="1" /></td>
+                        <td data-label="Unit"><select>
+                                <option>1/EACH</option>
+                            </select></td>
+                        <td data-label="Select"><button class="addToCartBtns">Add to Cart</button></td>
+                    </tr>
+                </tbody>
+      </table>
+    </div>
+  </div>
+
+  
+  <div class="featuresSection" style="display: none;">
+    <ul class="featureList">
+      <li>Compact and lightweight design for easy transport</li>
+      <li>LED display with battery and flow rate indicators</li>
+      <li>Quiet operation suitable for home and clinical use</li>
+      <li>Medical-grade materials ensure patient safety</li>
+    </ul>
+    <ul class="featureList">
+      <li>Adjustable oxygen flow up to 5 L/min</li>
+      <li>Comes with reusable air filters for cost efficiency</li>
+      <li>Low oxygen alarm for patient safety</li>
+      <li>Continuous and pulse dose modes available</li>
+      <li>Backed by a 2-year manufacturer warranty</li>
+    </ul>
+  </div>
+
+  
+  <div class="specTables" style="display: none;">
+    <table class="specTable">
+      <tbody>
+        <tr><th>Primary Product Color</th><td>Black</td></tr>
+        <tr><th>Primary Product Material</th><td>Steel</td></tr>
+        <tr><th>Overall Product Height</th><td>36"</td></tr>
+        <tr><th>Overall Product Length</th><td>42"</td></tr>
+        <tr><th>Overall Product Width</th><td>26"</td></tr>
+        <tr><th>Folded Dimensions</th><td>42" x 12.5" x 36"</td></tr>
+        <tr><th>Base Shipping Height</th><td>36.6</td></tr>
+        <tr><th>Base Shipping Length</th><td>32.48</td></tr>
+        <tr><th>Base Shipping Width</th><td>11.42</td></tr>
+        <tr><th>Base Shipping Weight</th><td>47.69</td></tr>
+        <tr><th>Actual Product Weight</th><td>44 lbs</td></tr>
+        <tr><th>Product Weight Capacity</th><td>300 lb</td></tr>
+        <tr><th>Seat Width</th><td>18"</td></tr>
+      </tbody>
+    </table>
+    <table class="specTable">
+      <tbody>
+        <tr><th>Seat Depth</th><td>16"</td></tr>
+        <tr><th>Seat to Floor Height</th><td>17.5"-19.5"</td></tr>
+        <tr><th>Seat to Armrest Height</th><td>8"</td></tr>
+        <tr><th>Armrest Length</th><td>14"</td></tr>
+        <tr><th>Armrest to Floor Height</th><td>27.5"</td></tr>
+        <tr><th>Closed Width</th><td>12.5"</td></tr>
+        <tr><th>Rear Wheel Size</th><td>24"</td></tr>
+        <tr><th>Front Wheel Size</th><td>8"</td></tr>
+        <tr><th>Product Overall Height</th><td>36"</td></tr>
+        <tr><th>Product Overall Length</th><td>42"</td></tr>
+        <tr><th>Product Overall Width</th><td>26"</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  
+  <div class="SpecificationsDownLoadOne" style="display: none;">
+    <div>
+      <i class="fa-solid fa-book-open"></i>
+      <p>User Manual</p>
+      <button type="button">Download</button>
+    </div>
+    <div>
+      <i class="fa-solid fa-gear"></i>
+      <p>Parts Diagram</p>
+      <button type="button">Download</button>
+    </div>
+    <div>
+      <i class="fa-regular fa-file-lines"></i>
+      <p>Catalog Page</p>
+      <button type="button">Download</button>
+    </div>
+  </div>
+</div> -->
+    <div class="thirdSection">
+        <div class="tabHeader">
+            <button class="active">Product Options</button>
+            <button>Features</button>
+            <button>Specifications</button>
+            <button>Resources/Downloads</button>
+        </div>
+
+        <!-- Product Options Tab -->
+        <div class="productOptionsTab" style="display: block;">
+            <div class="tableWrapper">
+                <table class="productOptionsTable">
+                    <thead>
+                        <tr>
+                            <th>Item #</th>
+                            <th>UPC</th>
+                            <th>Seat Size</th>
+                            <th>Front Rigging</th>
+                            <th>HCPCS</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Unit</th>
+                            <th>Select</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Item #">PLA416FBUARAD-ELR</td>
+                            <td data-label="UPC">822383005263</td>
+                            <td data-label="Seat Size">16"</td>
+                            <td data-label="Front Rigging">Elevating Leg Rest</td>
+                            <td data-label="HCPCS">$299.99</td>
+                            <td data-label="Price">$299.99</td>
+                            <td data-label="Quantity"><input type="number" value="1" min="1" /></td>
+                            <td data-label="Unit"><select>
+                                    <option>1/EACH</option>
+                                </select></td>
+                            <td data-label="Select"><button class="addToCartBtns">Add to Cart</button></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Item #">PLA416FBUARAD-ELR</td>
+                            <td data-label="UPC">822383005263</td>
+                            <td data-label="Seat Size">16"</td>
+                            <td data-label="Front Rigging">Elevating Leg Rest</td>
+                            <td data-label="HCPCS">$299.99</td>
+                            <td data-label="Price">$299.99</td>
+                            <td data-label="Quantity"><input type="number" value="1" min="1" /></td>
+                            <td data-label="Unit"><select>
+                                    <option>1/EACH</option>
+                                </select></td>
+                            <td data-label="Select"><button class="addToCartBtns">Add to Cart</button></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Item #">PLA416FBUARAD-ELR</td>
+                            <td data-label="UPC">822383005263</td>
+                            <td data-label="Seat Size">16"</td>
+                            <td data-label="Front Rigging">Elevating Leg Rest</td>
+                            <td data-label="HCPCS">$299.99</td>
+                            <td data-label="Price">$299.99</td>
+                            <td data-label="Quantity"><input type="number" value="1" min="1" /></td>
+                            <td data-label="Unit"><select>
+                                    <option>1/EACH</option>
+                                </select></td>
+                            <td data-label="Select"><button class="addToCartBtns">Add to Cart</button></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Item #">PLA416FBUARAD-ELR</td>
+                            <td data-label="UPC">822383005263</td>
+                            <td data-label="Seat Size">16"</td>
+                            <td data-label="Front Rigging">Elevating Leg Rest</td>
+                            <td data-label="HCPCS">$299.99</td>
+                            <td data-label="Price">$299.99</td>
+                            <td data-label="Quantity"><input type="number" value="1" min="1" /></td>
+                            <td data-label="Unit"><select>
+                                    <option>1/EACH</option>
+                                </select></td>
+                            <td data-label="Select"><button class="addToCartBtns">Add to Cart</button></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Item #">PLA416FBUARAD-ELR</td>
+                            <td data-label="UPC">822383005263</td>
+                            <td data-label="Seat Size">16"</td>
+                            <td data-label="Front Rigging">Elevating Leg Rest</td>
+                            <td data-label="HCPCS">$299.99</td>
+                            <td data-label="Price">$299.99</td>
+                            <td data-label="Quantity"><input type="number" value="1" min="1" /></td>
+                            <td data-label="Unit"><select>
+                                    <option>1/EACH</option>
+                                </select></td>
+                            <td data-label="Select"><button class="addToCartBtns">Add to Cart</button></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Item #">PLA416FBUARAD-ELR</td>
+                            <td data-label="UPC">822383005263</td>
+                            <td data-label="Seat Size">16"</td>
+                            <td data-label="Front Rigging">Elevating Leg Rest</td>
+                            <td data-label="HCPCS">$299.99</td>
+                            <td data-label="Price">$299.99</td>
+                            <td data-label="Quantity"><input type="number" value="1" min="1" /></td>
+                            <td data-label="Unit"><select>
+                                    <option>1/EACH</option>
+                                </select></td>
+                            <td data-label="Select"><button class="addToCartBtns">Add to Cart</button></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Item #">PLA416FBUARAD-ELR</td>
+                            <td data-label="UPC">822383005263</td>
+                            <td data-label="Seat Size">16"</td>
+                            <td data-label="Front Rigging">Elevating Leg Rest</td>
+                            <td data-label="HCPCS">$299.99</td>
+                            <td data-label="Price">$299.99</td>
+                            <td data-label="Quantity"><input type="number" value="1" min="1" /></td>
+                            <td data-label="Unit"><select>
+                                    <option>1/EACH</option>
+                                </select></td>
+                            <td data-label="Select"><button class="addToCartBtns">Add to Cart</button></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Item #">PLA416FBUARAD-ELR</td>
+                            <td data-label="UPC">822383005263</td>
+                            <td data-label="Seat Size">16"</td>
+                            <td data-label="Front Rigging">Elevating Leg Rest</td>
+                            <td data-label="HCPCS">$299.99</td>
+                            <td data-label="Price">$299.99</td>
+                            <td data-label="Quantity"><input type="number" value="1" min="1" /></td>
+                            <td data-label="Unit"><select>
+                                    <option>1/EACH</option>
+                                </select></td>
+                            <td data-label="Select"><button class="addToCartBtns">Add to Cart</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Features Tab -->
+        <div class="featuresSection" style="display: none;">
+            <div class="featuresSectionCenterWrapper">
+                <ul class="featureList">
+                    <li>Compact and lightweight design for easy transport</li>
+                    <li>LED display with battery and flow rate indicators</li>
+                    <li>Quiet operation suitable for home and clinical use</li>
+                    <li>Medical-grade materials ensure patient safety</li>
+                </ul>
+                <ul class="featureList">
+                    <li>Adjustable oxygen flow up to 5 L/min</li>
+                    <li>Comes with reusable air filters for cost efficiency</li>
+                    <li>Low oxygen alarm for patient safety</li>
+                    <li>Continuous and pulse dose modes available</li>
+                    <li>Backed by a 2-year manufacturer warranty</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Specifications Tab -->
+        <div class="specTables" style="display: none;">
+            <div class="specTablesCenterWrapper">
+                <table class="specTable">
+                    <tbody>
+                        <tr>
+                            <th>Primary Product Color</th>
+                            <td>Black</td>
+                        </tr>
+                        <tr>
+                            <th>Primary Product Material</th>
+                            <td>Steel</td>
+                        </tr>
+                        <tr>
+                            <th>Overall Product Height</th>
+                            <td>36"</td>
+                        </tr>
+                        <tr>
+                            <th>Overall Product Length</th>
+                            <td>42"</td>
+                        </tr>
+                        <tr>
+                            <th>Overall Product Width</th>
+                            <td>26"</td>
+                        </tr>
+                        <tr>
+                            <th>Folded Dimensions</th>
+                            <td>42" x 12.5" x 36"</td>
+                        </tr>
+                        <tr>
+                            <th>Base Shipping Height</th>
+                            <td>36.6</td>
+                        </tr>
+                        <tr>
+                            <th>Base Shipping Length</th>
+                            <td>32.48</td>
+                        </tr>
+                        <tr>
+                            <th>Base Shipping Width</th>
+                            <td>11.42</td>
+                        </tr>
+                        <tr>
+                            <th>Base Shipping Weight</th>
+                            <td>47.69</td>
+                        </tr>
+                        <tr>
+                            <th>Actual Product Weight</th>
+                            <td>44 lbs</td>
+                        </tr>
+                        <tr>
+                            <th>Product Weight Capacity</th>
+                            <td>300 lb</td>
+                        </tr>
+                        <tr>
+                            <th>Seat Width</th>
+                            <td>18"</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="specTable">
+                    <tbody>
+                        <tr>
+                            <th>Seat Depth</th>
+                            <td>16"</td>
+                        </tr>
+                        <tr>
+                            <th>Seat to Floor Height</th>
+                            <td>17.5"-19.5"</td>
+                        </tr>
+                        <tr>
+                            <th>Seat to Armrest Height</th>
+                            <td>8"</td>
+                        </tr>
+                        <tr>
+                            <th>Armrest Length</th>
+                            <td>14"</td>
+                        </tr>
+                        <tr>
+                            <th>Armrest to Floor Height</th>
+                            <td>27.5"</td>
+                        </tr>
+                        <tr>
+                            <th>Closed Width</th>
+                            <td>12.5"</td>
+                        </tr>
+                        <tr>
+                            <th>Rear Wheel Size</th>
+                            <td>24"</td>
+                        </tr>
+                        <tr>
+                            <th>Front Wheel Size</th>
+                            <td>8"</td>
+                        </tr>
+                        <tr>
+                            <th>Product Overall Height</th>
+                            <td>36"</td>
+                        </tr>
+                        <tr>
+                            <th>Product Overall Length</th>
+                            <td>42"</td>
+                        </tr>
+                        <tr>
+                            <th>Product Overall Width</th>
+                            <td>26"</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Resources/Downloads Tab -->
+        <div class="SpecificationsDownLoadOne" style="display: none;">
+            <div class="SpecificationsDownLoadOneCenterWrapper">
+                <div class="SpecificationsDownLoadOneCenterWrapperElementsParent">
+                    <i class="fa-solid fa-book-open"></i>
+                    <p>User Manual</p>
+                    <button type="button">Download</button>
+                </div>
+                <div class="SpecificationsDownLoadOneCenterWrapperElementsParent">
+                    <i class="fa-solid fa-gear"></i>
+                    <p>Parts Diagram</p>
+                    <button type="button">Download</button>
+                </div>
+                <div class="SpecificationsDownLoadOneCenterWrapperElementsParent">
+                    <i class="fa-regular fa-file-lines"></i>
+                    <p>Catalog Page</p>
+                    <button type="button">Download</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="fifthSection">
+        <h2 class="accessoriesTitle">Accessories</h2>
+
+        <div id="accessoriesGrid" class="accessoriesGrid">
+            <!-- Cards will be injected by JS -->
+        </div>
+
+        <div class="seeAllWrapper" id="seeAllButton">
+            <p class="seeAllBtn">See All</p>
+            <i class="arrowSizing fa-solid fa-angle-down"></i>
+        </div>
+    </div>
+
+
+    <div id="products" class="fourthBlock">
+        <div id="fourthBlockTotally">
+            <div id="fourthBlockfirstOne">
+                <img src="https://shop.drivemedical.com/_ui/responsive/common/images/LOGO.svg" alt="logoOne" />
+                <div id="fourthBlockfirstOneAppSymbole">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                </div>
+
+                <div id="forHr"></div>
+
+                <p id="fourthBlockfirstOneBigParagraphOne">
+                    © 2023 Medical Depot, Inc. dba Drive DeVilbiss Healthcare, 99 Seaview
+                    Boulevard, Port Washington, NY 11050. All trademarks used in association
+                    with the sale of products of Drive DeVilbiss Healthcare are trademarks
+                    owned by Medical Depot, Inc. All other trademarks, trade names, service
+                    marks and logos referenced herein belong to their respective companies
+                </p>
+
+                <p id="fourthBlockfirstOneShortParagraphOne">
+                    View the Terms & Conditions and Privacy Policy
+                </p>
+            </div>
+
+            <div class="products" id="fourthBlockSecoundOne">
+                <div class="fourthBlockSecoundOneFirstOne">
+                    <!-- Products Column -->
+                    <div class="fourthBlockSecoundOneFirstOneThree">
+                        <ul>
+                            <p class="list-heading">Products</p>
+                            <li><a href="#" target="_blank">Beds</a></li>
+                            <li><a href="#" target="_blank">Commodes</a></li>
+                            <li><a href="#" target="_blank">Inspired</a></li>
+                            <li><a href="#" target="_blank">Mobity</a></li>
+                            <li><a href="#" target="_blank">Patient Room</a></li>
+                            <li><a href="#" target="_blank">Personal Care</a></li>
+                            <li><a href="#" target="_blank">Respiratory</a></li>
+                            <li><a href="#" target="_blank">Sleep Therapy</a></li>
+                            <li><a href="#" target="_blank">Therapeutic Support</a></li>
+                            <li><a href="#" target="_blank">New Arrivals</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Support Column -->
+                    <div class="fourthBlockSecoundOneFirstOneThree">
+                        <ul>
+                            <p class="list-heading">Support</p>
+                            <li><a href="#" target="_blank">Contact Us</a></li>
+                            <li><a href="#" target="_blank">FAQs</a></li>
+                            <li><a href="#" target="_blank">Articles & Blogs</a></li>
+                            <li><a href="#" target="_blank">Press Release</a></li>
+                            <li><a href="#" target="_blank">Submit a Product Idea</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Who Are We Column -->
+                    <div class="fourthBlockSecoundOneFirstOneThree">
+                        <ul>
+                            <p class="list-heading">Who Are We</p>
+                            <li><a href="#" target="_blank">About Us</a></li>
+                            <li><a href="#" target="_blank">Leadership</a></li>
+                            <li><a href="#" target="_blank">Work With Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="fourthBlockSecoundOneSecoundOne">
+                    <!-- Who We Serve Column -->
+                    <div class="fourthBlockSecoundOneSecoundOneTwo">
+                        <ul>
+                            <p class="list-heading">Who We Serve</p>
+                            <li><a href="#" target="_blank">Homecare</a></li>
+                            <li><a href="#" target="_blank">Providers</a></li>
+                            <li><a href="#" target="_blank">Long Term Care</a></li>
+                            <li><a href="#" target="_blank">Healthcare</a></li>
+                            <li><a href="#" target="_blank">Professionals</a></li>
+                            <li><a href="#" target="_blank">Patient Room</a></li>
+                            <li><a href="#" target="_blank">Personal Care</a></li>
+                            <li><a href="#" target="_blank">Government</a></li>
+                            <li><a href="#" target="_blank">Retailers</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Account Column -->
+                    <div class="fourthBlockSecoundOneSecoundOneTwo">
+                        <ul>
+                            <p class="list-heading">Account</p>
+                            <li><a href="#" target="_blank">My Account</a></li>
+                            <li><a href="#" target="_blank">Order Status</a></li>
+                            <li><a href="#" target="_blank">Cancellations</a></li>
+                            <li><a href="#" target="_blank">Returns</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div id="lastBlock">
+        <img class="logoMinimizing spacing"
+            src="https://shop.drivemedical.com/_ui/responsive/common/images/DeVilbiss_logo.png" alt="img" />
+        <img class="logoMinimizing spacing"
+            src="https://shop.drivemedical.com/_ui/responsive/common/images/Drive_DeVilbiss_logo.png" alt="img" />
+        <img class="logoMinimizing spacing"
+            src="https://shop.drivemedical.com/_ui/responsive/common/images/Inovo_logo.png" alt="img" />
+
+        <div class="lastBlockLogoManupulation spacing">
+            <img src="https://shop.drivemedical.com/_ui/responsive/common/images/v2-footer-tuv-logo.png" alt="img" />
+            <p>
+                MDSAP Certificate&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EC Certificate
+            </p>
+        </div>
+
+        <img class="spacing" src="https://shop.drivemedical.com/_ui/responsive/common/images/v2-footer-tuv-logo.png"
+            alt="img" />
+
+        <div class="lastBlockLogoManupulation spacing">
+            <img src="https://shop.drivemedical.com/_ui/responsive/common/images/v2-footer-tuv-logo.png" alt="img" />
+            <p>
+                MDSAP Certificate&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EC Certificate
+            </p>
+        </div>
+    </div>
+
+
+
+
+    <!-- <div class="thirdSection">
+        <div class="tabHeader">
+            <button>Product Options</button>
+            <button>Features</button>
+            <button>Specifications</button>
+            <button>Resources/Downloads</button>
+        </div>
+
+        <div class="tableWrapper  productOptionsTab">
+            <table class="productOptionsTable">
+                <thead>
+                    <tr>
+                        <th>Item #</th>
+                        <th>UPC</th>
+                        <th>Seat Size</th>
+                        <th>Front Rigging</th>
+                        <th>HCPCS</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Unit</th>
+                        <th>Select</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Item #">PLA416FBUARAD-ELR</td>
+                        <td data-label="UPC">822383005263</td>
+                        <td data-label="Seat Size">16"</td>
+                        <td data-label="Front Rigging">Elevating Leg Rest</td>
+                        <td data-label="HCPCS">$299.99</td>
+                        <td data-label="Price">$299.99</td>
+                        <td data-label="Quantity"><input type="number" value="1" min="1" /></td>
+                        <td data-label="Unit"><select>
+                                <option>1/EACH</option>
+                            </select></td>
+                        <td data-label="Select"><button class="addToCartBtns">Add to Cart</button></td>
+                    </tr>
+                    <tr>
+                        <td data-label="Item #">PLA416FBUARAD-ELR</td>
+                        <td data-label="UPC">822383005263</td>
+                        <td data-label="Seat Size">16"</td>
+                        <td data-label="Front Rigging">Elevating Leg Rest</td>
+                        <td data-label="HCPCS">$299.99</td>
+                        <td data-label="Price">$299.99</td>
+                        <td data-label="Quantity"><input type="number" value="1" min="1" /></td>
+                        <td data-label="Unit"><select>
+                                <option>1/EACH</option>
+                            </select></td>
+                        <td data-label="Select"><button class="addToCartBtns">Add to Cart</button></td>
+                    </tr>
+                    <tr>
+                        <td data-label="Item #">PLA416FBUARAD-ELR</td>
+                        <td data-label="UPC">822383005263</td>
+                        <td data-label="Seat Size">16"</td>
+                        <td data-label="Front Rigging">Elevating Leg Rest</td>
+                        <td data-label="HCPCS">$299.99</td>
+                        <td data-label="Price">$299.99</td>
+                        <td data-label="Quantity"><input type="number" value="1" min="1" /></td>
+                        <td data-label="Unit"><select>
+                                <option>1/EACH</option>
+                            </select></td>
+                        <td data-label="Select"><button class="addToCartBtns">Add to Cart</button></td>
+                    </tr>
+                    <tr>
+                        <td data-label="Item #">PLA416FBUARAD-ELR</td>
+                        <td data-label="UPC">822383005263</td>
+                        <td data-label="Seat Size">16"</td>
+                        <td data-label="Front Rigging">Elevating Leg Rest</td>
+                        <td data-label="HCPCS">$299.99</td>
+                        <td data-label="Price">$299.99</td>
+                        <td data-label="Quantity"><input type="number" value="1" min="1" /></td>
+                        <td data-label="Unit"><select>
+                                <option>1/EACH</option>
+                            </select></td>
+                        <td data-label="Select"><button class="addToCartBtns">Add to Cart</button></td>
+                    </tr>
+                    <tr>
+                        <td data-label="Item #">PLA416FBUARAD-ELR</td>
+                        <td data-label="UPC">822383005263</td>
+                        <td data-label="Seat Size">16"</td>
+                        <td data-label="Front Rigging">Elevating Leg Rest</td>
+                        <td data-label="HCPCS">$299.99</td>
+                        <td data-label="Price">$299.99</td>
+                        <td data-label="Quantity"><input type="number" value="1" min="1" /></td>
+                        <td data-label="Unit"><select>
+                                <option>1/EACH</option>
+                            </select></td>
+                        <td data-label="Select"><button class="addToCartBtns">Add to Cart</button></td>
+                    </tr>
+                    <tr>
+                        <td data-label="Item #">PLA416FBUARAD-ELR</td>
+                        <td data-label="UPC">822383005263</td>
+                        <td data-label="Seat Size">16"</td>
+                        <td data-label="Front Rigging">Elevating Leg Rest</td>
+                        <td data-label="HCPCS">$299.99</td>
+                        <td data-label="Price">$299.99</td>
+                        <td data-label="Quantity"><input type="number" value="1" min="1" /></td>
+                        <td data-label="Unit"><select>
+                                <option>1/EACH</option>
+                            </select></td>
+                        <td data-label="Select"><button class="addToCartBtns">Add to Cart</button></td>
+                    </tr>
+                    <tr>
+                        <td data-label="Item #">PLA416FBUARAD-ELR</td>
+                        <td data-label="UPC">822383005263</td>
+                        <td data-label="Seat Size">16"</td>
+                        <td data-label="Front Rigging">Elevating Leg Rest</td>
+                        <td data-label="HCPCS">$299.99</td>
+                        <td data-label="Price">$299.99</td>
+                        <td data-label="Quantity"><input type="number" value="1" min="1" /></td>
+                        <td data-label="Unit"><select>
+                                <option>1/EACH</option>
+                            </select></td>
+                        <td data-label="Select"><button class="addToCartBtns">Add to Cart</button></td>
+                    </tr>
+                    <tr>
+                        <td data-label="Item #">PLA416FBUARAD-ELR</td>
+                        <td data-label="UPC">822383005263</td>
+                        <td data-label="Seat Size">16"</td>
+                        <td data-label="Front Rigging">Elevating Leg Rest</td>
+                        <td data-label="HCPCS">$299.99</td>
+                        <td data-label="Price">$299.99</td>
+                        <td data-label="Quantity"><input type="number" value="1" min="1" /></td>
+                        <td data-label="Unit"><select>
+                                <option>1/EACH</option>
+                            </select></td>
+                        <td data-label="Select"><button class="addToCartBtns">Add to Cart</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+           
+            <div class="featuresSection">
+                <ul class="featureList">
+                    <li>Compact and lightweight design for easy transport</li>
+                    <li>LED display with battery and flow rate indicators</li>
+                    <li>Quiet operation suitable for home and clinical use</li>
+                    <li>Medical-grade materials ensure patient safety</li>
+                </ul>
+                <ul class="featureList">
+                    <li>Adjustable oxygen flow up to 5 L/min</li>
+                    <li>Comes with reusable air filters for cost efficiency</li>
+                    <li>Low oxygen alarm for patient safety</li>
+                    <li>Continuous and pulse dose modes available</li>
+                    <li>Backed by a 2-year manufacturer warranty</li>
+                </ul>
+            </div>
+
+           
+            <div class="specTables">
+                <table class="specTable">
+                    <tbody>
+                        <tr>
+                            <th>Primary Product Color</th>
+                            <td>Black</td>
+                        </tr>
+                        <tr>
+                            <th>Primary Product Material</th>
+                            <td>Steel</td>
+                        </tr>
+                        <tr>
+                            <th>Overall Product Height</th>
+                            <td>36"</td>
+                        </tr>
+                        <tr>
+                            <th>Overall Product Length</th>
+                            <td>42"</td>
+                        </tr>
+                        <tr>
+                            <th>Overall Product Width</th>
+                            <td>26"</td>
+                        </tr>
+                        <tr>
+                            <th>Folded Dimensions</th>
+                            <td>42" x 12.5" x 36"</td>
+                        </tr>
+                        <tr>
+                            <th>Base Shipping Height</th>
+                            <td>36.6</td>
+                        </tr>
+                        <tr>
+                            <th>Base Shipping Length</th>
+                            <td>32.48</td>
+                        </tr>
+                        <tr>
+                            <th>Base Shipping Width</th>
+                            <td>11.42</td>
+                        </tr>
+                        <tr>
+                            <th>Base Shipping Weight</th>
+                            <td>47.69</td>
+                        </tr>
+                        <tr>
+                            <th>Actual Product Weight</th>
+                            <td>44 lbs</td>
+                        </tr>
+                        <tr>
+                            <th>Product Weight Capacity</th>
+                            <td>300 lb</td>
+                        </tr>
+                        <tr>
+                            <th>Seat Width</th>
+                            <td>18"</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="specTable">
+                    <tbody>
+                        <tr>
+                            <th>Seat Depth</th>
+                            <td>16"</td>
+                        </tr>
+                        <tr>
+                            <th>Seat to Floor Height</th>
+                            <td>17.5"-19.5"</td>
+                        </tr>
+                        <tr>
+                            <th>Seat to Armrest Height</th>
+                            <td>8"</td>
+                        </tr>
+                        <tr>
+                            <th>Armrest Length</th>
+                            <td>14"</td>
+                        </tr>
+                        <tr>
+                            <th>Armrest to Floor Height</th>
+                            <td>27.5"</td>
+                        </tr>
+                        <tr>
+                            <th>Closed Width</th>
+                            <td>12.5"</td>
+                        </tr>
+                        <tr>
+                            <th>Rear Wheel Size</th>
+                            <td>24"</td>
+                        </tr>
+                        <tr>
+                            <th>Front Wheel Size</th>
+                            <td>8"</td>
+                        </tr>
+                        <tr>
+                            <th>Product Overall Height</th>
+                            <td>36"</td>
+                        </tr>
+                        <tr>
+                            <th>Product Overall Length</th>
+                            <td>42"</td>
+                        </tr>
+                        <tr>
+                            <th>Product Overall Width</th>
+                            <td>26"</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+          
+            <div class="SpecificationsDownLoadOne">
+                <div>
+                    <i class="fa-solid fa-book-open"></i>
+                    <p>User Manual</p>
+                    <button type="button">Download</button>
+                </div>
+                <div>
+                    <i class="fa-solid fa-gear"></i>
+                    <p>Parts Diagram</p>
+                    <button type="button">Download</button>
+                </div>
+                <div>
+                    <i class="fa-regular fa-file-lines"></i>
+                    <p>Catalog Page</p>
+                    <button type="button">Download</button>
+                </div>
+            </div>
+
+
+        </div>
+    </div> -->
+
+
+
+
+
+
+
+    <script>
+        // chairImageChange arrow up/down
+  document.addEventListener("DOMContentLoaded", () => {
+    const mainImage = document.getElementById("mainProductImage");
+    const thumbnails = document.querySelectorAll(".thumbnailImage");
+    const arrowUp = document.getElementById("arrowUp");
+    const arrowDown = document.getElementById("arrowDown");
+
+    let currentIndex = 0;
+
+    // Update main image
+    function updateMainImage(index) {
+      if (thumbnails[index]) {
+        mainImage.src = thumbnails[index].dataset.src || thumbnails[index].src;
+        thumbnails.forEach(t => t.classList.remove("activeThumbnail"));
+        thumbnails[index].classList.add("activeThumbnail");
+        currentIndex = index;
+      }
+    }
+
+    // Thumbnail click
+    thumbnails.forEach((thumb, index) => {
+      thumb.addEventListener("click", () => {
+        updateMainImage(index);
+      });
+    });
+
+    // Arrow up
+    arrowUp?.addEventListener("click", () => {
+      if (currentIndex > 0) updateMainImage(currentIndex - 1);
+    });
+
+    // Arrow down
+    arrowDown?.addEventListener("click", () => {
+      if (currentIndex < thumbnails.length - 1) updateMainImage(currentIndex + 1);
+    });
+
+    // Initialize with first thumbnail
+    updateMainImage(currentIndex);
+  });
+
+
+
+//   button 
+  document.addEventListener("DOMContentLoaded", function () {
+    const seeMoreBtn = document.getElementById("seeMoreButton");
+    const moreText = document.getElementById("moreText");
+    const dots = document.getElementById("dots");
+    const seeMoreText = seeMoreBtn.querySelector(".seeMoreText");
+    const icon = seeMoreBtn.querySelector("i");
+
+    seeMoreBtn.addEventListener("click", function () {
+      const isHidden = moreText.style.display === "none";
+
+      moreText.style.display = isHidden ? "inline" : "none";
+      dots.style.display = isHidden ? "none" : "inline";
+
+      seeMoreText.textContent = isHidden ? "See Less" : "See More";
+      icon.classList.toggle("fa-angle-right", !isHidden);
+      icon.classList.toggle("fa-angle-up", isHidden);
+    });
+  });
+
+
+
+
+
+
+
+        // thirdSection
+        document.addEventListener("DOMContentLoaded", function () {
+            const tabButtons = document.querySelectorAll(".tabHeader button");
+            const tabSections = [
+                document.querySelector(".productOptionsTab"),
+                document.querySelector(".featuresSection"),
+                document.querySelector(".specTables"),
+                document.querySelector(".SpecificationsDownLoadOne")
+            ];
+
+            if (tabButtons.length === 0 || tabSections.some(section => !section)) return;
+
+            function showTab(index) {
+                tabSections.forEach((section, i) => {
+                    section.style.display = i === index ? "block" : "none";
+                    tabButtons[i]?.classList.toggle("active", i === index);
+                });
+            }
+
+            // Show first tab by default
+            showTab(0);
+
+            tabButtons.forEach((btn, i) => {
+                btn.addEventListener("click", () => showTab(i));
+            });
+        });
+
+
+        // fifthSection
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const accessoriesGrid = document.getElementById("accessoriesGrid");
+            const seeAllButton = document.getElementById("seeAllButton");
+
+            const itemsPerRow = 4;
+            let visibleRows = 1;
+
+            const accessories = Array.from({ length: 20 }, (_, i) => ({
+                name: "Heel Strap",
+                itemNumber: "STDS831",
+                price: "$262.23",
+                image:
+                    "https://media.istockphoto.com/id/183880070/photo/black-wheelchair-on-white-background.jpg?s=612x612&w=0&k=20&c=es7shP4g4_PjazHpJJ88irxREO9YlOk60Kv0bJAl_do=",
+            }));
+
+            function renderAccessories() {
+                accessoriesGrid.innerHTML = ""; // clear first
+                const itemsToShow = accessories.slice(0, visibleRows * itemsPerRow);
+
+                itemsToShow.forEach((item) => {
+                    const card = document.createElement("div");
+                    card.className = "accessoryCard";
+                    card.innerHTML = `
+          <img src="${item.image}" alt="${item.name}" />
+          <div class="accessoryDetails">
+            <h3>${item.name}</h3>
+            <p>Item # ${item.itemNumber}</p>
+            <h4>${item.price}</h4>
+            <button class="addToCartBtn">Add to Cart</button>
+          </div>
+        `;
+                    accessoriesGrid.appendChild(card);
+                });
+
+                // Hide See All button if all items are shown
+                if (visibleRows * itemsPerRow >= accessories.length) {
+                    seeAllButton.style.display = "none";
+                }
+            }
+
+            seeAllButton.addEventListener("click", function () {
+                visibleRows++;
+                renderAccessories();
+            });
+
+            renderAccessories(); // Initial render
+        });
+
+
+    </script>
+
+
+
+    <!-- <script>
+  const menuIcon = document.getElementById("menuDrop");
+  const dropMenu = document.getElementById("dropMenu");
+
+  menuIcon.addEventListener("click", () => {
+    dropMenu.classList.toggle("dropshoweme");
+  });
+</script> -->
+    <script src="script.js"></script>
+</body>
+
+</html>
