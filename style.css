@@ -1091,7 +1091,10 @@ img{
 
 
 
-
+.seeAllAchorTag {
+  cursor: pointer;
+   color: rgb(34, 34, 144);
+}
 
 
 

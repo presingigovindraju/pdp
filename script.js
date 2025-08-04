@@ -324,7 +324,13 @@ const riggingOptions = [
 renderFrontRiggingButtons('frontRiggingButtons', riggingOptions, 'Legrests');
 
 
-
+// seeAllProducts
+ function scrollToProductOptions() {
+    const el = document.getElementById("SeeAllProductOptions");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
 
 
 
