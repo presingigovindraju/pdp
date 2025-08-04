@@ -129,18 +129,19 @@
             <div class="productLayout">
                 <div class="leftImages">
                     <div class="sideThumbnails">
-  <i id="arrowUp" class="arrowSizing fa-solid fa-angle-up"></i>
+                        <i id="arrowUp" class="arrowSizing fa-solid fa-angle-up"></i>
 
-  <div class="thumbnailsView">
-    <img src="./img/chairFour.jpg" data-src="./img/chairFour.jpg" class="thumbnailImage" />
-    <img src="./img/chairOne.png" data-src="./img/chairOne.png" class="thumbnailImage" />
-    <img src="./img/chairTwo.png" data-src="./img/chairTwo.png" class="thumbnailImage" />
-    <img src="./img/chairThree.jpeg" data-src="./img/chairThree.jpeg" class="thumbnailImage activeThumbnail" />
-    
-  </div>
+                        <div class="thumbnailsView">
+                            <img src="./img/chairFour.jpg" data-src="./img/chairFour.jpg" class="thumbnailImage" />
+                            <img src="./img/chairOne.png" data-src="./img/chairOne.png" class="thumbnailImage" />
+                            <img src="./img/chairTwo.png" data-src="./img/chairTwo.png" class="thumbnailImage" />
+                            <img src="./img/chairThree.jpeg" data-src="./img/chairThree.jpeg"
+                                class="thumbnailImage activeThumbnail" />
 
-  <i id="arrowDown" class="arrowSizing fa-solid fa-angle-down"></i>
-</div>
+                        </div>
+
+                        <i id="arrowDown" class="arrowSizing fa-solid fa-angle-down"></i>
+                    </div>
 
                 </div>
 
@@ -171,38 +172,46 @@
 
                     <div class="productDetailsTwoSection">
                         <div class="optionGroup">
-                            <label>Color</label>
-                            <div class="colorDots">
-                                <span class="dot red selected active"></span>
-                                <span class="dot blue"></span>
-                                <span class="dot black"></span>
+                            <div class="colorRow">
+                                <label>Color</label>
+                                <div class="colorDots" id="colorDotsContainer">
+                                    <!-- Color dots will be inserted here dynamically -->
+                                </div>
                             </div>
                         </div>
 
+
                         <div class="optionGroup">
-                            <label>Seat Size</label>
-                            <div class="buttonGroup sizegap">
-                                <button class="active">18"</button>
-                                <button>16"</button>
-                                <button>20"</button>
+                            <div class="seatRow">
+                                <label>Seat Size</label>
+                                <div class="buttonGroup sizegap" id="seatSizeButtons"></div>
                             </div>
                         </div>
 
-                        <div class="optionGroup">
+
+
+
+                        <div class="optionGroup armStyleGroup">
                             <label>Arm Style</label>
-                            <div class="buttonGroup styleGap">
-                                <button class="active">Desk</button>
-                                <button>Full</button>
+                            <div class="buttonGroup styleGap" id="armStyleButtons"></div>
+                        </div>
+
+
+
+
+
+
+
+
+                        <div class="optionGroup">
+                            <div class="riggingRow">
+                                <label>Front Rigging</label>
+                                <div class="buttonGroup riggingGap" id="frontRiggingButtons">
+                                    <!-- Buttons inserted dynamically -->
+                                </div>
                             </div>
                         </div>
 
-                        <div class="optionGroup">
-                            <label>Front Rigging</label>
-                            <div class="buttonGroup riggingGap">
-                                <button>Footrests</button>
-                                <button class="active">Legrests</button>
-                            </div>
-                        </div>
 
                         <div class="seeAllAchorTag">
                             <a href="https://www.drivemedical.com/customer-service" target="_blank">See All Product
@@ -211,24 +220,25 @@
                         </div>
                     </div>
 
-                   <div class="productDetailsThreeSection">
-  <h3>About This Item</h3>
-  <p id="aboutText">
-    If you are seeking an easy, transportable mobility option,
-    then look no further than Drive Medical’s Silver Sport Transport Wheelchair.
-    The durable steel frame with an attractive silver vein finish and durable vinyl upholstery
-    <span id="dots">...</span>
-    <span id="moreText" style="display: none;">
-      It also features padded armrests and swing-away footrests for enhanced comfort.
-      With its lightweight design and easy-folding feature, it’s perfect for travel and storage.
-    </span>
-  </p>
+                    <div class="productDetailsThreeSection">
+                        <h3>About This Item</h3>
+                        <p id="aboutText">
+                            If you are seeking an easy, transportable mobility option,
+                            then look no further than Drive Medical’s Silver Sport Transport Wheelchair.
+                            The durable steel frame with an attractive silver vein finish and durable vinyl upholstery
+                            <span id="dots">...</span>
+                            <span id="moreText" style="display: none;">
+                                It also features padded armrests and swing-away footrests for enhanced comfort.
+                                With its lightweight design and easy-folding feature, it’s perfect for travel and
+                                storage.
+                            </span>
+                        </p>
 
-  <button id="seeMoreButton" style="margin-top: 8px;">
-    <span class="seeMoreText">See More</span>
-    <i class="arrowTextDocaretionRemove fa-solid fa-angle-right"></i>
-  </button>
-</div>
+                        <button id="seeMoreButton" style="margin-top: 8px;">
+                            <span class="seeMoreText">See More</span>
+                            <i class="arrowTextDocaretionRemove fa-solid fa-angle-right"></i>
+                        </button>
+                    </div>
 
 
                 </div>
@@ -1214,73 +1224,108 @@
 
 
 
+    <script src="./script.js"></script>
 
-
-    <script>
+    <!-- <script>
         // chairImageChange arrow up/down
-  document.addEventListener("DOMContentLoaded", () => {
-    const mainImage = document.getElementById("mainProductImage");
-    const thumbnails = document.querySelectorAll(".thumbnailImage");
-    const arrowUp = document.getElementById("arrowUp");
-    const arrowDown = document.getElementById("arrowDown");
+        document.addEventListener("DOMContentLoaded", () => {
+            const mainImage = document.getElementById("mainProductImage");
+            const thumbnails = document.querySelectorAll(".thumbnailImage");
+            const arrowUp = document.getElementById("arrowUp");
+            const arrowDown = document.getElementById("arrowDown");
 
-    let currentIndex = 0;
+            let currentIndex = 0;
 
-    // Update main image
-    function updateMainImage(index) {
-      if (thumbnails[index]) {
-        mainImage.src = thumbnails[index].dataset.src || thumbnails[index].src;
-        thumbnails.forEach(t => t.classList.remove("activeThumbnail"));
-        thumbnails[index].classList.add("activeThumbnail");
-        currentIndex = index;
-      }
-    }
+            // Update main image
+            function updateMainImage(index) {
+                if (thumbnails[index]) {
+                    mainImage.src = thumbnails[index].dataset.src || thumbnails[index].src;
+                    thumbnails.forEach(t => t.classList.remove("activeThumbnail"));
+                    thumbnails[index].classList.add("activeThumbnail");
+                    currentIndex = index;
+                }
+            }
 
-    // Thumbnail click
-    thumbnails.forEach((thumb, index) => {
-      thumb.addEventListener("click", () => {
-        updateMainImage(index);
-      });
-    });
+            // Thumbnail click
+            thumbnails.forEach((thumb, index) => {
+                thumb.addEventListener("click", () => {
+                    updateMainImage(index);
+                });
+            });
 
-    // Arrow up
-    arrowUp?.addEventListener("click", () => {
-      if (currentIndex > 0) updateMainImage(currentIndex - 1);
-    });
+            // Arrow up
+            arrowUp?.addEventListener("click", () => {
+                if (currentIndex > 0) updateMainImage(currentIndex - 1);
+            });
 
-    // Arrow down
-    arrowDown?.addEventListener("click", () => {
-      if (currentIndex < thumbnails.length - 1) updateMainImage(currentIndex + 1);
-    });
+            // Arrow down
+            arrowDown?.addEventListener("click", () => {
+                if (currentIndex < thumbnails.length - 1) updateMainImage(currentIndex + 1);
+            });
 
-    // Initialize with first thumbnail
-    updateMainImage(currentIndex);
-  });
-
-
-
-//   button 
-  document.addEventListener("DOMContentLoaded", function () {
-    const seeMoreBtn = document.getElementById("seeMoreButton");
-    const moreText = document.getElementById("moreText");
-    const dots = document.getElementById("dots");
-    const seeMoreText = seeMoreBtn.querySelector(".seeMoreText");
-    const icon = seeMoreBtn.querySelector("i");
-
-    seeMoreBtn.addEventListener("click", function () {
-      const isHidden = moreText.style.display === "none";
-
-      moreText.style.display = isHidden ? "inline" : "none";
-      dots.style.display = isHidden ? "none" : "inline";
-
-      seeMoreText.textContent = isHidden ? "See Less" : "See More";
-      icon.classList.toggle("fa-angle-right", !isHidden);
-      icon.classList.toggle("fa-angle-up", isHidden);
-    });
-  });
+            // Initialize with first thumbnail
+            updateMainImage(currentIndex);
+        });
 
 
 
+        //   button 
+        document.addEventListener("DOMContentLoaded", function () {
+            const seeMoreBtn = document.getElementById("seeMoreButton");
+            const moreText = document.getElementById("moreText");
+            const dots = document.getElementById("dots");
+            const seeMoreText = seeMoreBtn.querySelector(".seeMoreText");
+            const icon = seeMoreBtn.querySelector("i");
+
+            seeMoreBtn.addEventListener("click", function () {
+                const isHidden = moreText.style.display === "none";
+
+                moreText.style.display = isHidden ? "inline" : "none";
+                dots.style.display = isHidden ? "none" : "inline";
+
+                seeMoreText.textContent = isHidden ? "See Less" : "See More";
+                icon.classList.toggle("fa-angle-right", !isHidden);
+                icon.classList.toggle("fa-angle-up", isHidden);
+            });
+        });
+
+
+
+        //    SecoundSection
+        function renderSeatSizeButtons(containerId, sizes = [], defaultSize = '') {
+            const container = document.getElementById(containerId);
+
+            if (!container || !Array.isArray(sizes)) return;
+
+            // Clear existing buttons
+            container.innerHTML = '';
+
+            sizes.forEach(size => {
+                const button = document.createElement('button');
+                button.textContent = size;
+
+                // Add 'active' class to default size
+                if (size === defaultSize) {
+                    button.classList.add('active');
+                }
+
+                // On click, set active and do something with the value
+                button.addEventListener('click', () => {
+                    const allButtons = container.querySelectorAll('button');
+                    allButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    // Example: log selected size
+                    console.log(`Selected seat size: ${size}`);
+                });
+
+                container.appendChild(button);
+            });
+        }
+
+        // Example usage (simulate backend data)
+        const seatSizesFromBackend = ['16"', '18"', '20"', '22"', '24"', '26"', '28"', '30"', '32"', '34"'];
+        renderSeatSizeButtons('seatSizeButtons', seatSizesFromBackend, '18"');
 
 
 
@@ -1364,7 +1409,7 @@
         });
 
 
-    </script>
+    </script> -->
 
 
 
